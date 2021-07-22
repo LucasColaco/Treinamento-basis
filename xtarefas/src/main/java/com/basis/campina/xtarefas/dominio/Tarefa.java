@@ -25,10 +25,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Tarefa implements Serializable {
+    private static final long serialVersionUID = -105928580546167973L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_TAREFA")
     @SequenceGenerator(name = "SEQ_TAREFA", sequenceName = "SEQ_TAREFA", allocationSize = 1)
+    @Column(name = "ID")
     private Integer id;
 
     @Column(name = "NOME")

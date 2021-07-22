@@ -1,9 +1,7 @@
 package com.basis.campina.xtarefas.servico;
 
-import com.basis.campina.xtarefas.dominio.Responsavel;
 import com.basis.campina.xtarefas.dominio.Tarefa;
 import com.basis.campina.xtarefas.repositorio.TarefaRepository;
-import com.basis.campina.xtarefas.servico.dto.ResponsavelDTO;
 import com.basis.campina.xtarefas.servico.dto.TarefaDTO;
 import com.basis.campina.xtarefas.servico.mapper.TarefaMapper;
 import java.util.List;
@@ -22,7 +20,13 @@ public class TarefaService {
     private final TarefaMapper tarefaMapper;
 
     public List<TarefaDTO> buscar(){
-        return tarefaRepository.findAll().stream().map(tarefaMapper::toDTO).collect(Collectors.toList());
+        return tarefaRepository.findAll().stream().map(tarefaMapper::toDto).collect(Collectors.toList());
+    }
+
+    public TarefaDTO salvar(TarefaDTO tarefaDTO){
+        Tarefa obj = tarefaMapper.toEntity(tarefaDTO);
+        obj = tarefaRepository.save(obj);
+        return tarefaMapper.toDto(obj);
     }
 
 }

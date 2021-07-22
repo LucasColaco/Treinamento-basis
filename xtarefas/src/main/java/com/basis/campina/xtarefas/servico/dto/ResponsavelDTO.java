@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class ResponsavelDTO implements Serializable {
+    private static final long serialVersionUID = -3601012565284465569L;
 
     private Integer id;
     private String nome;

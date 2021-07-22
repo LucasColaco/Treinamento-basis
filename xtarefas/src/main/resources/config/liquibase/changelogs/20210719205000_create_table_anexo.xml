@@ -16,7 +16,6 @@
         <addNotNullConstraint tableName="TB_ANEXO" columnName="ID"/>
         <addNotNullConstraint tableName="TB_ANEXO" columnName="FILE"/>
         <addNotNullConstraint tableName="TB_ANEXO" columnName="FILE_NAME"/>
-        <addNotNullConstraint tableName="TB_ANEXO" columnName="TAREFA_ID"/>
     </changeSet>
 
     <changeSet id="20210719205000-3" author="lucas.colaco">

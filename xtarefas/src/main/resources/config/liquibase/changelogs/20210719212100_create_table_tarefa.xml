@@ -9,7 +9,7 @@
             <column name="NOME" type="VARCHAR2(255)"></column>
             <column name="DT_INICIO" type="DATE"></column>
             <column name="DT_CONCLUSAO" type="DATE"></column>
-            <column name="STATUS" type="CHAR"></column>
+            <column name="STATUS" type="VARCHAR2(255)"></column>
             <column name="RESPONSAVEL_ID" type="NUMBER(10)"></column>
 
         </createTable>

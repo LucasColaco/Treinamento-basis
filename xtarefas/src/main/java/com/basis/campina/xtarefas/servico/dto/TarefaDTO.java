@@ -13,12 +13,13 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class TarefaDTO implements Serializable {
+    private static final long serialVersionUID = 7637082609981002371L;
 
     private Integer id;
     private String nome;
     private LocalDate dtInicio;
     private LocalDate dtConclusao;
     private String status;
-    private List<Anexo> anexos;
-    private Responsavel responsavel;
+    private Long responsavel;
+    private List<AnexoDTO> anexos;
 }

@@ -19,6 +19,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Responsavel implements Serializable {
+    private static final long serialVersionUID = -6769149339650436377L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_RESPONSAVEL")

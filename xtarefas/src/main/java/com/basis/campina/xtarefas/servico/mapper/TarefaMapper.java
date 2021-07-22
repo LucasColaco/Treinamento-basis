@@ -1,15 +1,18 @@
 package com.basis.campina.xtarefas.servico.mapper;
 
-import com.basis.campina.xtarefas.dominio.Responsavel;
 import com.basis.campina.xtarefas.dominio.Tarefa;
-import com.basis.campina.xtarefas.servico.dto.ResponsavelDTO;
 import com.basis.campina.xtarefas.servico.dto.TarefaDTO;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
-public interface TarefaMapper {
+public interface TarefaMapper extends EntityMapper<TarefaDTO, Tarefa>{
 
-    Tarefa toEntity(TarefaDTO dto);
+    @Override
+    @Mapping(source = "responsavel", target = "responsavel.id")
+    Tarefa toEntity(TarefaDTO tarefaDTO);
 
-    TarefaDTO toDTO(Tarefa obj);
+    @Override
+    @Mapping(source = "responsavel.id", target = "responsavel")
+    TarefaDTO toDto(Tarefa tarefa);
 }
